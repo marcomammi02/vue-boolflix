@@ -1,19 +1,29 @@
 <template>
   <div>
     <h1>Bool-Flix</h1>
-    <label for="search">
-      <input
-        id="search"
-        type="text"
-        placeholder="Search movies or series..."
-      >
+    <form @submit.prevent="$emit('queryChange', quaryString)">
+      <label for="quary">
+        <input
+          id="quary"
+          v-model="quaryString"
+          type="text"
+          name="quary"
+          placeholder="Search movies or series..."
+        >
+      </label>
       <button>Search</button>
-    </label>
+    </form>
   </div>
 </template>
 
 <script>
 export default {
+  name: 'PageHeader',
+  data() {
+    return {
+      quaryString: '',
+    };
+  },
 
 };
 </script>
@@ -36,7 +46,7 @@ export default {
     font-family: 'Zen Dots', cursive;
   }
 
-  label {
+  form {
     margin-right: 2.5rem;
   }
 
