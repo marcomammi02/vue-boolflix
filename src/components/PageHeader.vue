@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="header">
     <h1>Bool-Flix</h1>
     <form @submit.prevent="$emit('queryChange', quaryString)">
       <label for="quary">
@@ -29,8 +29,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Zen+Dots&display=swap');
-
   div {
     display: flex;
     justify-content: space-between;
@@ -58,6 +56,9 @@ export default {
   button {
     width: 60px;
     height: 28px;
+    color: #ffffff;
+    background-color: #ff0000;
+    border: none;
   }
 
 </style>
