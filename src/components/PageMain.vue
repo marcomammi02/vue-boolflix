@@ -12,6 +12,7 @@
         :language="objMovie.original_language"
         :vote="objMovie.vote_average"
         :overview="objMovie.overview"
+        :img-url="objMovie.poster_path"
       />
     </ul>
 
@@ -27,6 +28,7 @@
         :language="objTv.original_language"
         :vote="objTv.vote_average"
         :overview="objTv.overview"
+        :img-url="objTv.poster_path"
       />
     </ul>
   </div>

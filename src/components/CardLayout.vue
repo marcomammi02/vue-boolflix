@@ -14,6 +14,12 @@
       <li class="overview">
         {{ overview }}
       </li>
+      <li>
+        <img
+          :src="imgUrlBase + 'w342' + imgUrl"
+          :alt="title"
+        >
+      </li>
     </ul>
   </li>
 </template>
@@ -32,6 +38,12 @@ export default {
     language: String,
     vote: Number,
     overview: String,
+    imgUrl: String,
+  },
+  data() {
+    return {
+      imgUrlBase: 'https://image.tmdb.org/t/p/',
+    };
   },
 };
 </script>
@@ -46,6 +58,7 @@ export default {
     background-color: rgb(255, 255, 255);
     padding: 1rem;
     border-radius: 10px;
+    position: relative;
   }
 
   .overview {
@@ -58,5 +71,14 @@ export default {
 
   .flags {
     font-size: 1.5rem;
+  }
+
+  img {
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 </style>
