@@ -3,7 +3,13 @@
     <ul>
       <li>{{ title }}</li>
       <li>{{ originalTitle }}</li>
-      <li>{{ language }}</li>
+      <li>
+        <lang-flag
+          class="flags"
+          :iso="language"
+          :title="language"
+        />
+      </li>
       <li>{{ vote }}</li>
       <li class="overview">
         {{ overview }}
@@ -13,9 +19,13 @@
 </template>
 
 <script>
+import LangFlag from 'vue-lang-code-flags';
 
 export default {
-  name: 'CardLayput',
+  name: 'CardLayout',
+  components: {
+    LangFlag,
+  },
   props: {
     title: String,
     originalTitle: String,
@@ -44,5 +54,9 @@ export default {
 
   ul {
     list-style: none;
+  }
+
+  .flags {
+    font-size: 1.5rem;
   }
 </style>
