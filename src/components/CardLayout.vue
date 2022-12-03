@@ -10,7 +10,7 @@
           :title="language"
         />
       </li>
-      <li>{{ vote }}</li>
+      <li>Vote: {{ ( vote / 2) }}</li>
       <li class="overview">
         {{ overview }}
       </li>
@@ -63,6 +63,7 @@ export default {
 
   .overview {
     overflow: auto;
+    max-height: 230px;
   }
 
   ul {
@@ -75,10 +76,16 @@ export default {
 
   img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
     border-radius: 10px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+
+  .card:hover img {
+    display: none;
   }
 </style>
